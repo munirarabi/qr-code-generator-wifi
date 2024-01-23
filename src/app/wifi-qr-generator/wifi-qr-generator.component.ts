@@ -6,20 +6,17 @@ import QRCode from 'qrcode-generator';
   standalone: true,
   imports: [],
   templateUrl: './wifi-qr-generator.component.html',
-  styleUrl: './wifi-qr-generator.component.css'
+  styleUrl: './wifi-qr-generator.component.css',
 })
 export class WifiQrGeneratorComponent {
+
   wifiInfo = {
-    ssid: 'sua-rede-wifi',
-    password: 'sua-senha',
-    encryption: 'WPA' // ou 'WEP' ou 'nopass'
+    ssid: 'NET_5GC122FB',
+    password: 'ECC122FB',
+    encryption: 'WPA', // ou 'WEP' ou 'nopass'
   };
 
   qrCodeData: string = '';
-
-  ngOnInit(): void {
-    this.generateWifiQrCode();
-  }
 
   generateWifiQrCode(): void {
     const wifiString = `WIFI:T:${this.wifiInfo.encryption};S:${this.wifiInfo.ssid};P:${this.wifiInfo.password};;`;

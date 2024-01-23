@@ -1,2 +1,33 @@
-<!-- <app-wifi-qr-generator></app-wifi-qr-generator> -->
-<app-inputs-qr-generator></app-inputs-qr-generator>
+<div *ngIf="BoolInputsComponent">
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Login Wi-fi</mat-label>
+      <input
+        (change)="UpdateLoginWifi($event)"
+        matInput
+        placeholder="Ex. NET_5G"
+      />
+    </mat-form-field>
+  </form>
+
+  <form class="example-form">
+    <mat-form-field class="example-full-width">
+      <mat-label>Senha Wi-fi</mat-label>
+      <input
+        (change)="UpdatePasswordWifi($event)"
+        matInput
+        placeholder="Ex. 123456"
+      />
+    </mat-form-field>
+  </form>
+
+  <div class="example-button-row">
+    <button mat-raised-button color="primary" (click)="GenerateQrCodeWifi()">
+      Gerar Qr Code
+    </button>
+  </div>
+</div>
+
+<div *ngIf="BoolWifiComponent">
+  <app-wifi-qr-generator></app-wifi-qr-generator>
+</div>
